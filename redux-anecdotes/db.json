@@ -49,6 +49,11 @@
       "content": "Another test anecdote after using thunk.",
       "votes": 0,
       "id": "wDD-Vhi"
+    },
+    {
+      "content": "This is the first anecdote created using the new system.",
+      "votes": 0,
+      "id": "A-oMhO8"
     }
   ]
 }
