@@ -4,8 +4,9 @@ import { vote } from '../reducers/anecdoteReducer'
 import { setVoteNotification, resetNotification } from '../reducers/notificationReducer'
 
 const AnecdoteList = () => {  
-
-  const anecdotes = useSelector(state => state.anecdotes.sort((a,b) => b.votes - a.votes))
+  const filterText = useSelector(state => state.filter)
+  const anecdotes = useSelector(state => state.anecdotes.filter((anecdote) => anecdote.content.includes(filterText)).sort((a,b) => b.votes - a.votes))
+  
   const dispatch = useDispatch()
 
   const voteButtonHandler = (anecdote) => {
