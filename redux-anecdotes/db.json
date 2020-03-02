@@ -7,7 +7,7 @@
     },
     {
       "content": "Adding manpower to a late software project makes it later!",
-      "votes": 2,
+      "votes": 3,
       "id": "21149"
     },
     {
@@ -32,7 +32,7 @@
     },
     {
       "content": "This is a test anecdote.",
-      "votes": 8,
+      "votes": 9,
       "id": "dta7a6_"
     },
     {
@@ -44,6 +44,11 @@
       "content": "This is another test anecdote with the new notification system.",
       "votes": 0,
       "id": "PlKJQFA"
+    },
+    {
+      "content": "Added another anecdote to test connect.",
+      "votes": 1,
+      "id": "0e5fy2x"
     }
   ]
 }
