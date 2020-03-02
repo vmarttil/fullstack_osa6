@@ -1,17 +1,13 @@
 
-export const setAddNotification = content => {  
-  const notification = `You added the anecdote '${content}'`
-  return {
-    type: 'SET_NOTIFICATION',
-    data: notification,
-  }
-}
-
-export const setVoteNotification = content => {
-  const notification = `You voted '${content}'`
-  return {
-    type: 'SET_NOTIFICATION',
-    data: notification,
+export const setNotification = (notification, timer) => {
+  return async dispatch => {
+    dispatch({
+      type: 'SET_NOTIFICATION',
+      data: notification
+    })
+    setTimeout(() => {
+      dispatch(resetNotification())
+    }, timer * 1000)
   }
 }
 
