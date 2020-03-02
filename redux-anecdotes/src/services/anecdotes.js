@@ -20,4 +20,10 @@ const createNew = async (content) => {
   return response.data
 }
 
-export default { getAll, createNew }
+const addVote = async (anecdote) => {
+  const targetUrl = baseUrl.concat('/',anecdote.id)
+  const response = await axios.put(targetUrl,{content: anecdote.content, votes: anecdote.votes + 1})
+  return response.data
+}
+
+export default { getAll, createNew, addVote }

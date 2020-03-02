@@ -9,7 +9,7 @@ const AnecdoteList = () => {
   const dispatch = useDispatch()
 
   const voteButtonHandler = (anecdote) => {
-    dispatch(vote(anecdote.id))
+    dispatch(vote(anecdote))
     dispatch(setVoteNotification(anecdote.content))
     setTimeout(() => {
       dispatch(resetNotification())
