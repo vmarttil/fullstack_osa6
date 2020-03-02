@@ -6,7 +6,6 @@ import { setVoteNotification, resetNotification } from '../reducers/notification
 const AnecdoteList = () => {  
   const filterText = useSelector(state => state.filter)
   const anecdotes = useSelector(state => state.anecdotes.filter((anecdote) => anecdote.content.includes(filterText)).sort((a,b) => b.votes - a.votes))
-  
   const dispatch = useDispatch()
 
   const voteButtonHandler = (anecdote) => {

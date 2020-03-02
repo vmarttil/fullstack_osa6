@@ -7,20 +7,19 @@
   'Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it.'
 ]
 */
-const getId = () => (100000 * Math.random()).toFixed(0)
+// const getId = () => (100000 * Math.random()).toFixed(0)
 
 const asObject = (anecdote) => {
   return {
     content: anecdote,
-    id: getId(),
     votes: 0
   }
 }
 
-export const createAnecdote = (content) => {
+export const createAnecdote = (anecdote) => {
   return {
     type: 'NEW_ANECDOTE',
-    data: asObject(content)
+    data: anecdote
   }
 }
 
@@ -53,7 +52,7 @@ const anecdoteReducer = (state = [], action) => {
         anecdote.id !== id ? anecdote : votedAnecdote 
       )
       case 'NEW_ANECDOTE':
-        const newAnecdote = asObject(action.data.content)
+        const newAnecdote = action.data
         return state.concat(newAnecdote)
       case 'INIT_ANECDOTES':
         return action.data
