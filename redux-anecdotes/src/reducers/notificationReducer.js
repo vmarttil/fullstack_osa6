@@ -1,13 +1,17 @@
+let timer = null
 
-export const setNotification = (notification, timer) => {
+export const setNotification = (notification, time) => {
   return async dispatch => {
     dispatch({
       type: 'SET_NOTIFICATION',
       data: notification
     })
-    setTimeout(() => {
+    if (timer != null) {
+      clearTimeout(timer)
+    }
+    timer = setTimeout(() => {
       dispatch(resetNotification())
-    }, timer * 1000)
+    }, time * 1000)
   }
 }
 
